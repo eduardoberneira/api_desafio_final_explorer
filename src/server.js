@@ -1,4 +1,6 @@
+require("dotenv/config");
 require("express-async-errors");
+
 const database = require("./database/sqlite");
 const AppError = require("./utils/AppError");
 

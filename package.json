@@ -11,8 +11,12 @@
   "author": "Eduardo Berneira",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.1",
+    "knex": "^2.4.2",
     "nodemon": "^2.0.22",
     "sqlite": "^4.2.1",
     "sqlite3": "^5.1.6"
