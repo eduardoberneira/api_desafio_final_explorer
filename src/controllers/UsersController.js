@@ -72,6 +72,14 @@ class UsersController {
 
     return response.json()
   };
+
+  async delete(request, response) {
+    const { id } = request.params;
+
+    await knex("users").where({id}).delete();
+
+    return response.json();
+  }
 };
 
 module.exports = UsersController;

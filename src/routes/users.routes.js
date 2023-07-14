@@ -9,5 +9,6 @@ const usersController = new UsersController();
 
 usersRoutes.post("/", usersController.create);
 usersRoutes.put("/", ensureAuthenticated, usersController.update);
+usersRoutes.delete("/:id", usersController.delete)
 
 module.exports = usersRoutes;
