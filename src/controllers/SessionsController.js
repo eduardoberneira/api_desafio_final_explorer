@@ -6,7 +6,7 @@ const { compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 
 class SessionsController {
-  async Create(request, response) {
+  async create(request, response) {
     const { email, password} = request.body;
 
     const user = await knex("users").where({email}).first();

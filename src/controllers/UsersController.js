@@ -57,6 +57,7 @@ class UsersController {
 
     user.name = name || user.name;
     user.email = email || user.email;
+    user.is_admin = is_admin || user.is_admin
 
     if(password && old_password) {
       const checkOldPassword = compare(old_password, user.password);
@@ -68,7 +69,7 @@ class UsersController {
       user.password = await hash(password, 8);
     };
 
-    await knex("users").where({id: user_id}).first().update({ name: user.name, email: user.email, password: user.password, is_admin })
+    await knex("users").where({id: user_id}).update({ name: user.name, email: user.email, password: user.password, is_admin })
 
     return response.json()
   };

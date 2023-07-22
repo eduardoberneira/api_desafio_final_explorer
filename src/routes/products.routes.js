@@ -8,6 +8,8 @@ const productsController = new ProductsController();
 
 productsRoutes.use(ensureAuthenticated);
 
-productsRoutes.post("/", productsController.Create);
+productsRoutes.post("/", productsController.create);
+productsRoutes.get("/:id", productsController.show);
+productsRoutes.put("/:id", productsController.update);
 
 module.exports = productsRoutes;
