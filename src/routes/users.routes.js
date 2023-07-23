@@ -8,7 +8,11 @@ const usersRoutes = Router();
 const usersController = new UsersController();
 
 usersRoutes.post("/", usersController.create);
-usersRoutes.put("/", ensureAuthenticated, usersController.update);
-usersRoutes.delete("/:id", usersController.delete)
+
+//ASSIM TODAS ROTAS ABAIXO DO MIDDLEWARE EXIGEM AUTENTICAÇÃO
+usersRoutes.use(ensureAuthenticated);
+
+usersRoutes.put("/", usersController.update);
+usersRoutes.delete("/", usersController.delete);
 
 module.exports = usersRoutes;
