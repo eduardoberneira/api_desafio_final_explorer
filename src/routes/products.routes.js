@@ -10,6 +10,6 @@ productsRoutes.use(ensureAuthenticated);
 
 productsRoutes.post("/", productsController.create);
 productsRoutes.get("/:id", productsController.show);
-productsRoutes.put("/:id", productsController.update);
+productsRoutes.put("/:id", productsController.refactorUpdate);
 
 module.exports = productsRoutes;
